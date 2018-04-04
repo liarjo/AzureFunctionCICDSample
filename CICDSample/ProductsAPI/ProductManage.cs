@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using ProductManage;
 
 namespace ProductsAPI
 {
@@ -15,7 +16,7 @@ namespace ProductsAPI
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get",  Route = "products/version")]HttpRequestMessage req, TraceWriter log)
         {
           
-            return req.CreateResponse(HttpStatusCode.OK, new { version =1.0}, JsonMediaTypeFormatter.DefaultMediaType);
+            return req.CreateResponse(HttpStatusCode.OK, new { version = ProductManager.GetProducManagerVersion()}, JsonMediaTypeFormatter.DefaultMediaType);
         }
     }
 }
