@@ -1,0 +1,2 @@
+# AzureFunctionCICDSample
+AzureFunctionCICDSample
