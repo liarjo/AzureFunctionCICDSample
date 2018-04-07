@@ -16,7 +16,7 @@ namespace ProductsAPI
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get",  Route = "products/version")]HttpRequestMessage req, TraceWriter log)
         {
             var currentBuild = new { version = ProductManager.GetProducManagerVersion() };
-            log.Info(currentBuild.version);
+            log.Info($"{currentBuild.version} demo live");
             return req.CreateResponse(HttpStatusCode.OK, currentBuild, JsonMediaTypeFormatter.DefaultMediaType);
         }
     }
