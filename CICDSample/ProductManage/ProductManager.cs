@@ -10,7 +10,7 @@ namespace ProductManage
     {
         public static string GetProducManagerVersion()
         {
-            return "1.0.6";
+            return "1.0.7";
         }
     }
 }
